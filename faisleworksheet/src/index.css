@@ -120,7 +120,7 @@ body {
   width: 1px;
   overflow: hidden;
   clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
+  /* clip: rect(1px, 1px, 1px, 1px); */
   white-space: nowrap;
 }
 [class*="stack"] > * {
@@ -202,7 +202,7 @@ body {
 }
 .filters {
   width: 100%;
-  margin: unset auto;
+  /* margin: unset auto; */
 }
 /* Todo item styles */
 .todo {
