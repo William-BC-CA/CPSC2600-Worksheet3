@@ -1,0 +1,17 @@
+Using the dev tools, answer the following questions in a text file:
+    a. As you type the name of a new task, how is the <Form/> component keeping track of what the user types in.
+
+Answer: There appears to be a state that gets saved. Whenever I type something and then stop, the state gets updated with the input that I've typed in.
+
+    b. When you click on the Edit button, you see a text box which allows you to update the name of an existing task. Which component is showing this template and how is it updating the name if you click on “Save”.
+
+Answer: The Todo components shows this template.
+There is the first state hook that changes from false to true.
+The 4th ref changes from null to <input>. The 5th ref becomes null.
+Whenever I type something and stop, the second state gets updated with the text I've typed in.
+When I click save, the states go back to what it was before and then name of the prop gets updated.
+
+    c. As you add new tasks to your do list, the list of tasks gets updated - Locate the component where this update is reflected
+
+Answer: The App content contains a number of states. The first state shows like an array of todos.
+When I add a new one, it adds on to the array.
