@@ -1,4 +1,4 @@
-# ${REPO_NAME}
+# CPSC2600-Worksheet3
 <h2>PLEASE READ LICENSE.md!</h2>
 
-${Description}
+CPSC2600 Worksheet 3.
