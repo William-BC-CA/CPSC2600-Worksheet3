@@ -17,7 +17,9 @@ function usePrevious(value) {
 
 const FILTER_MAP = {
   All: () => true,
-  Active: (task) => !task.completed,
+  // Active: (task) => !task.completed,
+  "Not Started": () => true,
+  Started: () => true,
   Completed: (task) => task.completed
 };
 
@@ -105,7 +107,9 @@ function App(props) {
       <h1>TodoMatic</h1>
       <Form addTask = {addTask} />
       {/* <FilterButton /> */}
-      {filterList}
+      <div className = "filters btn-group stack-exception">
+        {filterList}
+      </div>
       <h2 id="list-heading" tabIndex="-1" ref={listHeadingRef}>
         {headingText}
       </h2>
