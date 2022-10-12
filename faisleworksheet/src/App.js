@@ -16,11 +16,11 @@ function usePrevious(value) {
 
 
 const FILTER_MAP = {
-  All: () => true,
+  All: (task) => true,
   // Active: (task) => !task.completed,
-  "Not Started": () => true,
-  Started: () => true,
-  Completed: (task) => task.completed
+  "Not Started": (task) => task.status = 0,
+  Started: (task) => task.status = 1,
+  Completed: (task) => task.status = 2
 };
 
 const FILTER_NAMES = Object.keys(FILTER_MAP);
@@ -30,7 +30,7 @@ function App(props) {
   const [filter, setFilter] = useState('All');
   function addTask(name) {
     alert(name);
-    const newTask = { id: `todo-${nanoid()}`, name, completed: false};
+    const newTask = { id: `todo-${nanoid()}`, name, status: 0};
     setTasks([...tasks, newTask]);
   }
   // console.log(props.tasks);
@@ -41,7 +41,7 @@ function App(props) {
       if (id === task.id) {
         // use object spread to make a new object
         // whose `completed` prop has been inverted
-        return {...task, completed: !task.completed}
+        return {...task, status: task.status === 2}
       }
       return task;
     });
@@ -60,7 +60,7 @@ function App(props) {
     <Todo
       id={task.id}
       name={task.name}
-      completed={task.completed}
+      status={task.status}
       key={task.id}
       toggleTaskCompleted={toggleTaskCompleted}
       deleteTask={deleteTask}
